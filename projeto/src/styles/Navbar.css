@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #ffb6c1;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #6b1e3e;
+}

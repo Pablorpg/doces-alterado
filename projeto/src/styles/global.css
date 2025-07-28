@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(to bottom right, #fde4e4, #fff0f5);
+}
+
+.home-container {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.home-card {
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 50px 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto 50px;
+  border: 4px double #ffb6c1;
+}
+
+.home-card h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8rem;
+  color: #d96c86;
+  margin-bottom: 10px;
+}
+
+.home-card p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.btn-saborear {
+  background-color: #ffb6c1;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-saborear:hover {
+  background-color: #ff8fab;
+  transform: scale(1.05);
+}
+
+/* Vitrine de Doces */
+.vitrine {
+  margin-top: 50px;
+}
+
+.vitrine h2 {
+  color: #d96c86;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.doces-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.doce-card {
+  background-color: #fff8f8;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  color: #8b3a62;
+  transition: transform 0.3s;
+}
+
+.doce-card:hover {
+  transform: translateY(-5px);
+  background-color: #ffe1ec;
+}
+
+/* Promoções */
+.promocoes {
+  background-color: #fff0f5;
+  margin-top: 60px;
+  padding: 40px 20px;
+  border-top: 4px dashed #ffc0cb;
+}
+
+.promocoes h2 {
+  color: #c71585;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.promocoes p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #444;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .home-card h1 {
+    font-size: 2rem;
+  }
+
+  .btn-saborear {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,33 @@
+.cardapio-container {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.cardapio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.item-doce {
+  background-color: #fff8f8;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.item-doce button {
+  background-color: #ff8fab;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.item-doce button:hover {
+  background-color: #e75480;
+}
