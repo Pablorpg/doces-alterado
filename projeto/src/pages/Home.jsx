@@ -17,7 +17,7 @@ function Home() {
         <h2>✨ Nossos Doces ✨</h2>
         <div className="doces-grid">
           <div className="doce-card">Cupcake</div>
-          <div className="doce-card">Donut</div>
+          <div className="doce-card">Morango do Amor</div>
           <div className="doce-card">Brigadeiro</div>
           <div className="doce-card">Bolo de Pote</div>
         </div>

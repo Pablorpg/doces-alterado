@@ -35,3 +35,68 @@
 .btn-editar:hover {
   background-color: #e75480;
 }
+
+.form-edicao label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.form-edicao input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+.form-edicao button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff8fab;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.foto-perfil {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: block;
+  border: 3px solid #ffb6c1;
+}
+
+.btn-resetar {
+  background-color: #ddd;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.btn-resetar:hover {
+  background-color: #bbb;
+}
+
+.form-edicao label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.form-edicao input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}

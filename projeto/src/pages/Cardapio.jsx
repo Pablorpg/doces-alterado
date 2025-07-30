@@ -2,16 +2,37 @@ import React, { useState } from 'react';
 import '../styles/Cardapio.css';
 
 function Cardapio() {
-  const doces = ['Brigadeiro', 'Cupcake', 'Donut', 'Bolo de Pote'];
+  const doces = [
+    { nome: 'Brigadeiro', preco: 2.5 },
+    { nome: 'Cupcake', preco: 5.0 },
+    { nome: 'Morango do Amor', preco: 6.0 },
+    { nome: 'Bolo de Pote', preco: 7.5 }
+  ];
+
+  const [mensagem, setMensagem] = useState('');
+  const [tipoMensagem, setTipoMensagem] = useState('');
 
   const adicionar = (doce) => {
-    // Recuperar carrinho do localStorage
     const carrinhoExistente = JSON.parse(localStorage.getItem('carrinho')) || [];
-    const novoCarrinho = [...carrinhoExistente, doce];
+    const novoCarrinho = [...carrinhoExistente, doce]; // salva objeto com nome e preco
 
-    // Salvar no localStorage
     localStorage.setItem('carrinho', JSON.stringify(novoCarrinho));
-    alert(`${doce} adicionado ao carrinho!`);
+
+    setMensagem(`🍬 ${doce.nome} adicionado ao carrinho!`);
+    setTipoMensagem(getClassePorDoce(doce.nome));
+
+    setTimeout(() => {
+      setMensagem('');
+      setTipoMensagem('');
+    }, 3000);
+  };
+
+  const getClassePorDoce = (doce) => {
+    if (doce.toLowerCase().includes('brigadeiro')) return 'mensagem-brigadeiro';
+    if (doce.toLowerCase().includes('cupcake')) return 'mensagem-cupcake';
+    if (doce.toLowerCase().includes('morango')) return 'mensagem-morangodoamor';
+    if (doce.toLowerCase().includes('bolo')) return 'mensagem-bolo';
+    return '';
   };
 
   return (
@@ -20,13 +41,20 @@ function Cardapio() {
       <div className="cardapio-grid">
         {doces.map((doce, index) => (
           <div className="item-doce" key={index}>
-            <p>{doce}</p>
+            <p>{doce.nome}</p>
+            <p>R$ {doce.preco.toFixed(2)}</p>
             <button onClick={() => adicionar(doce)}>Adicionar 🛒</button>
           </div>
         ))}
       </div>
+
+      {mensagem && (
+        <div className={`mensagem-carrinho ${tipoMensagem}`}>
+          {mensagem}
+        </div>
+      )}
     </div>
   );
 }
 
-export default Cardapio
+export default Cardapio;

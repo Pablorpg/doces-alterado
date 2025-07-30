@@ -52,7 +52,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Vitrine de Doces */
 .vitrine {
   margin-top: 50px;
 }
@@ -85,7 +84,6 @@ body {
   background-color: #ffe1ec;
 }
 
-/* Promoções */
 .promocoes {
   background-color: #fff0f5;
   margin-top: 60px;
@@ -105,7 +103,6 @@ body {
   color: #444;
 }
 
-/* Responsivo */
 @media (max-width: 600px) {
   .home-card h1 {
     font-size: 2rem;
