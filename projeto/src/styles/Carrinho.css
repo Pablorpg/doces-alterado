@@ -1,0 +1,48 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 0, 30, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.mensagem-finalizado {
+  background-color: #fff0f5;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  max-width: 90%;
+  width: 350px;
+}
+
+.mensagem-finalizado h2 {
+  color: #4caf50;
+  margin-bottom: 15px;
+}
+
+.mensagem-finalizado p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #4b1c2f;
+}
+
+.mensagem-finalizado button {
+  background-color: #ff8fab;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mensagem-finalizado button:hover {
+  background-color: #e75480;
+}

@@ -5,7 +5,7 @@ function Cardapio() {
   const doces = [
     { nome: 'Brigadeiro', preco: 2.5 },
     { nome: 'Cupcake', preco: 5.0 },
-    { nome: 'Morango do Amor', preco: 6.0 },
+    { nome: 'Morango do Amor', preco: 12.0 },
     { nome: 'Bolo de Pote', preco: 7.5 }
   ];
 
@@ -14,7 +14,7 @@ function Cardapio() {
 
   const adicionar = (doce) => {
     const carrinhoExistente = JSON.parse(localStorage.getItem('carrinho')) || [];
-    const novoCarrinho = [...carrinhoExistente, doce]; // salva objeto com nome e preco
+    const novoCarrinho = [...carrinhoExistente, doce];
 
     localStorage.setItem('carrinho', JSON.stringify(novoCarrinho));
 

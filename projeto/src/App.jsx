@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Cardapio from './pages/Cardapio';
 import Carrinho from './pages/Carrinho';
-import Perfil from './pages/Perfil';
+import Contato from './pages/Contato';
 import Pedido from './pages/Pedido';
 import './styles/global.css';
 
@@ -17,7 +17,7 @@ function App() {
         <Route path="/cardapio" element={<Cardapio />} />
         <Route path="/carrinho" element={<Carrinho />} />
         <Route path="/pedido" element={<Pedido />} />
-        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/contato" element={<Contato />} />
       </Routes>
     </Router>
   );
