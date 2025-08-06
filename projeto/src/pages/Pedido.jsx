@@ -7,34 +7,47 @@ function Pedido() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timeouts = [
-      setTimeout(() => setEtapa('preparando'), 3000),
-      setTimeout(() => setEtapa('emRota'), 10000),
-      setTimeout(() => setEtapa('entregue'), 10000),
-    ];
+    const pedidoFoiFinalizado = localStorage.getItem('pedidoFinalizado') === 'true';
 
-    return () => timeouts.forEach(clearTimeout);
+    if (pedidoFoiFinalizado) {
+      const timeouts = [
+        setTimeout(() => setEtapa('preparando'), 3000),
+        setTimeout(() => setEtapa('emRota'), 10000),
+        setTimeout(() => setEtapa('entregue'), 17000)
+      ];
+
+      return () => timeouts.forEach(clearTimeout);
+    } else {
+      setEtapa('naoFinalizado');
+    }
   }, []);
 
-  const voltar = () => navigate('/');
+  const voltar = () => {
+    localStorage.removeItem('pedidoFinalizado');
+    navigate('/');
+  };
 
   return (
     <div className="etapaOverlay">
-      {etapa === 'confirmado' && <p> 🔍 Analisando pedido...</p>}
+      {etapa === 'confirmado' && <p>🔍 Analisando pedido...</p>}
       {etapa === 'preparando' && <p>👩‍🍳 Seu pedido está sendo preparado...</p>}
       {etapa === 'emRota' && (
         <div>
           <p>🛵 Pedido saiu para entrega!</p>
-          <div className="motoAnimada">🏍️💨</div>
         </div>
       )}
       {etapa === 'entregue' && (
         <>
-          <p>📦 Pedido entregue com sucesso! Obrigada ❤️</p>
+          <p>📦 Pedido entregue! Obrigada pela preferência.    ❤️</p>
           <button onClick={voltar}>Voltar ao Início.</button>
         </>
       )}
-
+      {etapa === 'naoFinalizado' && (
+        <>
+          <p>❌ Nenhum pedido foi finalizado.</p>
+          <button onClick={voltar}>Voltar ao Início</button>
+        </>
+      )}
     </div>
   );
 }

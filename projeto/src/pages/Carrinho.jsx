@@ -49,6 +49,7 @@ function Carrinho() {
   };
 
   const finalizarPedido = () => {
+    localStorage.setItem('pedidoFinalizado', 'true');
     localStorage.removeItem('carrinho');
     setShowConfirmacao(true);
     setItensAgrupados({});
@@ -58,48 +59,25 @@ function Carrinho() {
   const nomesDoces = Object.keys(itensAgrupados);
 
   return (
-    <div style={{ padding: '40px 20px', textAlign: 'center' }}>
+    <div className="carrinho-container">
       <h2>🛍️ Carrinho</h2>
 
       {nomesDoces.length === 0 ? (
         <p>Carrinho vazio.</p>
       ) : (
         <>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
+          <ul className="lista-itens">
             {nomesDoces.map((nome, index) => {
               const item = itensAgrupados[nome];
               return (
-                <li
-                  className="itemCardapio"
-                  key={index}
-                  style={{
-                    fontSize: '1.1rem',
-                    marginBottom: '10px',
-                    background: '#fff0f5',
-                    padding: '12px 16px',
-                    borderRadius: '10px',
-                    maxWidth: '380px',
-                    margin: '10px auto',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                  }}
-                >
-                  <span style={{ textAlign: 'left' }}>
+                <li className="item-cardapio" key={index}>
+                  <span>
                     <strong>{item.nome}</strong> — {item.quantidade}x<br />
                     <small>R$ {item.preco.toFixed(2)} cada</small>
                   </span>
                   <button
                     onClick={() => removerItem(item.nome)}
-                    style={{
-                      background: '#ff6b6b',
-                      color: 'white',
-                      border: 'none',
-                      borderRadius: '8px',
-                      padding: '6px 12px',
-                      cursor: 'pointer',
-                      fontWeight: 'bold',
-                    }}
+                    className="botao-remover"
                   >
                     ❌
                   </button>
@@ -108,32 +86,10 @@ function Carrinho() {
             })}
           </ul>
 
-          <div
-            style={{
-              marginTop: '30px',
-              padding: '20px',
-              backgroundColor: '#fdf0f5',
-              borderRadius: '15px',
-              maxWidth: '400px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-            }}
-          >
+          <div className="caixa-pagamento">
             <h3>💳 Pagamento</h3>
             <p>Total: <strong>R$ {total.toFixed(2)}</strong></p>
-            <button
-              style={{
-                background: '#4caf50',
-                color: 'white',
-                padding: '10px 20px',
-                border: 'none',
-                borderRadius: '20px',
-                cursor: 'pointer',
-                marginTop: '10px',
-                fontWeight: 'bold'
-              }}
-              onClick={finalizarPedido}
-            >
+            <button className="botao-finalizar" onClick={finalizarPedido}>
               Finalizar Pedido
             </button>
           </div>
